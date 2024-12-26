@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <style>
+        .center {
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .success-message {
+            color: green;
+            font-size: 18px;
+            font-weight: bold;
+            text-align: center;
+            display: none; 
+        }
+    </style>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Course Registration</title>
+    <script>
+        function handleSubmit(event) {
+            event.preventDefault();
+
+            document.getElementById('success-message').style.display = 'block';
+
+            document.getElementById('registration-form').reset();
+        }
+    </script>
+</head>
+<body bgcolor="White">
+    <form id="registration-form" onsubmit="handleSubmit(event)">
+        <fieldset>
+            <legend>Course Registration</legend>
+            <p>
+                <label>
+                    Salutation
+                    <br/>
+                    <select name="Saluation">
+                        <option>--None--</option>
+                        <option>Mr.</option>
+                        <option>Mrs.</option>
+                        <option>Ms.</option>
+                        <option>Dr.</option>
+                        <option>Prof.</option>
+                    </select>
+                </label>
+            </p>
+            <p>
+                <label>First Name: <input name="firstname" /></label>
+            </p>
+            <p>
+                <label>Last Name: <input name="lastname" /></label>
+            </p>
+            <p>
+                <label>Rollno: <input name="rollno" /></label>
+            </p>
+            <p>
+                <label>
+                    Year:
+                    <br/>
+                    <input type="radio" name="year" value="1st year" /> 1st year
+                    <input type="radio" name="year" value="2nd year" /> 2nd year
+                    <input type="radio" name="year" value="3rd year" /> 3rd year
+                    <input type="radio" name="year" value="4th year" /> 4th year
+                </label>
+            </p>
+            <p>
+                <label>Email:
+                    <input type="email" name="email" />
+                </label>
+            </p>
+            <p>
+                <label>
+                    Course Selection:
+                    <br/>
+                    <input type="checkbox" name="course" value="EPAM" /> EPAM
+                    <input type="checkbox" name="course" value="Problem Solving Skills" /> Problem Solving Skills
+                    <input type="checkbox" name="course" value="Deep Learning" /> Deep Learning
+                    <input type="checkbox" name="course" value="Parallel and Distributed Computing" /> Parallel and Distributed Computing
+                    <input type="checkbox" name="course" value="Cloud Based AIML" /> Cloud Based AIML
+                    <input type="checkbox" name="course" value="Term Paper" /> Term Paper
+                </label>
+            </p>
+            <p>
+                <button type="submit" class="center">Submit</button>
+            </p>
+        </fieldset>
+    </form>
+
+    <div id="success-message" class="success-message">
+        Form Submitted Successfully!
+    </div>
+</body>
+</html>
